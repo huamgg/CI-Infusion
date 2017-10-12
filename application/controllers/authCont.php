@@ -54,9 +54,9 @@ class authCont extends CI_Controller {
 		if (isset($_POST['register'])){
 			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
 			$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
-			$this->form_validation->set_rules('password', 'Password', 'required|min_length[7]');
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
 			//this bellow is for check password with confirmation password
-			$this->form_validation->set_rules('confirmpassword', 'confirm password', 'required|min_length[7]|matches[password]');
+			$this->form_validation->set_rules('confirmpassword', 'confirm password', 'required|min_length[5]|matches[password]');
 			$this->form_validation->set_rules('phone', 'Phone', 'required');
 						
 
@@ -76,6 +76,7 @@ class authCont extends CI_Controller {
 				'phone'=>$_POST['phone'],
 			];
 
+			//data will insert to table users
 			$this->db->insert('users', $data);
 
 			$this->session->set_flashdata('success', 'Your account has been registered. You can login now');

@@ -9,7 +9,7 @@ class userCont extends CI_Controller {
         parent::__construct();
         if ($_SESSION['user_logged'] == FALSE){
             $this->session->set_flashdata("error", "Please login first to view this page!! ");
-            redirect("authCont/loginView");
+            redirect("authCont/login");
         }
     }
 
