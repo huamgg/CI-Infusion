@@ -34,7 +34,7 @@ class userCont extends CI_Controller {
 		
         }
 
-        public function toggle-of() {
+        public function toggle-off() {
             
                 $this->load->model('Getter');
                 $data['dashboard_content'] = $this->Getter->get_dash_content(); 
