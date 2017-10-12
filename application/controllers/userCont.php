@@ -21,12 +21,26 @@ class userCont extends CI_Controller {
             redirect("authCont/login");
         }
 
-            $this->load->view('userpageView', 'refresh');
+        $this->load->view('userpageView', 'refresh');
 
     }
 
 		public function dashboardview() {
+            
+                $this->load->model('Getter');
+                $data['dashboard_content'] = $this->Getter->get_dash_content(); 
+                
+                $this->load->view('dashboardView', $data);
+		
+        }
 
-			$this->load->view('dashboardView');
-		}
+        public function toggle-of() {
+            
+                $this->load->model('Getter');
+                $data['dashboard_content'] = $this->Getter->get_dash_content(); 
+                
+                $this->load->view('dashboardView', $data);
+		
+        }
+        
 }

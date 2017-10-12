@@ -36,7 +36,7 @@ class authCont extends CI_Controller {
 				$_SESSION['email'] = $user->email;
 
 				//redirect to profile page if success
-				redirect("userCont/userpage", "refresh");
+				redirect("userCont/dashboardview", "refresh");
 			}
 			
 			else{
