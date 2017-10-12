@@ -21,41 +21,27 @@ class userCont extends CI_Controller {
             redirect("authCont/login");
         }
 
-<<<<<<< HEAD
-        $this->load->model('userModel');
-        $data['campaigns'] = $this->userModel->getCampaign(); //->result_array();
-
-            $this->load->view('dashboardView', 'refresh');
-
-    }
-
-	public function dashboardview() {
-
-			$this->load->view('dashboardView');
-	}
-
-=======
         $this->load->view('userpageView', 'refresh');
 
     }
 
 		public function dashboardview() {
-            
+                       
                 $this->load->model('Getter');
-                $data['dashboard_content'] = $this->Getter->get_dash_content(); 
-                
+                $data['dashboard_content'] = $this->Getter->get_dash_content();                 
                 $this->load->view('dashboardView', $data);
 		
         }
 
-        public function toggle-off() {
-            
-                $this->load->model('Getter');
-                $data['dashboard_content'] = $this->Getter->get_dash_content(); 
+        // public function toggle($id, $status) {
+        //     $id= 
+        //         $this->load->model('Getter');
+        //         $data['status'] = $this->Getter->toggle($id, $status); 
                 
-                $this->load->view('dashboardView', $data);
+        //         $this->load->view('dashboardView', $data);
+
+        //         // $this->load->view('registerView');
 		
-        }
+        // }
         
->>>>>>> 41368e4bd9d19c09397f1a75b834c0af523ef755
 }
