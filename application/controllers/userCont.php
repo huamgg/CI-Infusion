@@ -21,12 +21,16 @@ class userCont extends CI_Controller {
             redirect("authCont/login");
         }
 
-            $this->load->view('userpageView', 'refresh');
+        $this->load->model('userModel');
+        $data['campaigns'] = $this->userModel->getCampaign(); //->result_array();
+
+            $this->load->view('dashboardView', 'refresh');
 
     }
 
-		public function dashboardview() {
+	public function dashboardview() {
 
 			$this->load->view('dashboardView');
-		}
+	}
+
 }
