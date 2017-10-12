@@ -1,3 +1,15 @@
+<style>
+   
+    .mailborder{
+      border: 2px solid grey;
+      padding: 20px;
+      /* max-width: 30%; */
+    }
+    #bodym{
+      height:130px;
+    }
+</style>
+
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
