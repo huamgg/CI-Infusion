@@ -45,19 +45,6 @@
                 <!-- bagian email -->
                 <div class="col-md-6">
                     <div class="row">
-<<<<<<< HEAD
-                        
-                        <?php
-                            foreach ($campaigns as $b){
-                             ?>
-                        <div class="col-md-6 email-view">
-                            <h3><button type="button" class="btn btn-status btn-xs btn-success">on</button><button type="button" class="btn btn-status btn-xs btn-danger">off</button>$b->campaign_name</h3>
-                            <p class="campaign-title">Title Campaign</p>
-                            <button type="button" class="btn btn-warning">Edit Campaign</button>
-                        </div>
-                        <?php }
-                        ?>
-=======
 
                     <!-- kotak-kotak email -->
                         <?php foreach( $dashboard_content as $e) {?>
@@ -78,7 +65,6 @@
                                 <button type="button" class="btn btn-warning">Edit Campaign</button>
                             </div>
                         <?php } ?>
->>>>>>> 41368e4bd9d19c09397f1a75b834c0af523ef755
 
                     </div>
                 </div>
