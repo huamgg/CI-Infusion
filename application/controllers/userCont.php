@@ -20,7 +20,6 @@ class userCont extends CI_Controller {
             $this->session->set_flashdata("error", "Please login first to view this page!! ");
             redirect("authCont/login");
         }
-        
         $this->load->view('userpageView', 'refresh');
 
     }
@@ -28,18 +27,19 @@ class userCont extends CI_Controller {
 		public function dashboardview() {
             
                 $this->load->model('Getter');
-                $data['dashboard_content'] = $this->Getter->get_dash_content(); 
+                $data['email'] = $this->Getter->get_dash_sms();
+                $data2['email'] = $this->Getter->get_dash_email(); 
                 
-                $this->load->view('dashboardView', $data);
+                $this->load->view('dashboardView', $data, $data2);
 		
         }
 
-        public function toggle-off() {
+        // public function toggle-off() {
             
-                $this->load->model('Getter');
-                $data['dashboard_content'] = $this->Getter->get_dash_content(); 
-                $this->load->view('dashboardView', $data);
-        }
+        //         $this->load->model('Getter');
+        //         $data['dashboard_content'] = $this->Getter->get_dash_content(); 
+        //         $this->load->view('dashboardView', $data);
+        // }
 
         // New Campaign Form -------
 

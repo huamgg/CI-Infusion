@@ -47,13 +47,13 @@
                     <div class="row">
 
                     <!-- kotak-kotak email -->
-                        <?php foreach( $dashboard_content as $e) {?>
+                        <?php foreach( $email as $e) {?>
                             <div class="col-md-6 email-view">
                                 <h3>
                                     <?php echo $e->campaign_name ?>
 
                                     <?php if($e->status==0){ ?>
-                                    <?php anchor (function asd($e->id) , tukangon) ?>
+                                    
                                         <button type="button" class="btn btn-status btn-xs btn-success" name="tukangon">on</button>
                                         <button type="button" class="btn btn-status btn-xs btn-danger">off</button>
                                     <?php } else { ?>
@@ -70,22 +70,31 @@
                 </div>
 
                 
-
-
-                <!-- <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-6 email-view">
-                            <h3><button type="button" class="btn btn-status btn-xs btn-success">on</button><button type="button" class="btn btn-status btn-xs btn-danger">off</button>New Kcp</h3>
-                            <p class="campaign-title">Title Campaign</p>
-                            <button type="button" class="btn btn-warning">Edit Campaign</button>
-                        </div>
-                        <div class="col-md-6 email-view">
-                            <h3><button type="button" class="btn btn-status btn-xs btn-success">on</button><button type="button" class="btn btn-status btn-xs btn-danger">of</button>New Kcp</h3>
-                            <p class="campaign-title">Title Campign</p>
-                            <button type="button" class="btn btn-warning">Edit Campaign</button>
-                        </div>
+
+                    <!-- kotak-kotak sms -->
+                        <?php foreach( $email as $e) {?>
+                            <div class="col-md-6 email-view">
+                                <h3>
+                                    <?php echo $e->campaign_name ?>
+
+                                    <?php if($e->status==0){ ?>
+                                    
+                                        <button type="button" class="btn btn-status btn-xs btn-success" name="tukangon">on</button>
+                                        <button type="button" class="btn btn-status btn-xs btn-danger">off</button>
+                                    <?php } else { ?>
+                                        <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
+                                        <button type="button" class="btn btn-status btn-xs btn-danger"> off</button>
+                                    <?php } ?>
+                                </h3>
+                                <p class="campaign-title"><?php echo $e->label_name ?></p>
+                                <button type="button" class="btn btn-warning">Edit Campaign</button>
+                            </div>
+                        <?php } ?>
+
                     </div>
-                </div> -->
+                </div>
 
 
 
