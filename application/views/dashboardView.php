@@ -85,7 +85,6 @@
                                 <h3>
                                     <?php echo $e->campaign_name ?>
 
-                                   <?php echo form_hiden('id', $this-uri->segment(3)); ?>
                                     <?php if($e->status==0){ ?>
                                         <a href="<?php echo base_url(); ?>index.php/usercont/toggle/<?php $e->id ?>/<?php $e->status ?>">
                                         <button type="button" class="btn btn-status btn-xs btn-success" name="tukangon">on</button>

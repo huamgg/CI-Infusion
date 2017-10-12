@@ -20,7 +20,10 @@ class userCont extends CI_Controller {
             $this->session->set_flashdata("error", "Please login first to view this page!! ");
             redirect("authCont/login");
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30919177384c8b51ffb0dd7f69e743236659e4de
         $this->load->view('userpageView', 'refresh');
 
     }
@@ -28,6 +31,7 @@ class userCont extends CI_Controller {
 		public function dashboardview() {
                        
                 $this->load->model('Getter');
+<<<<<<< HEAD
                 $data['dashboard_content'] = $this->Getter->get_dash_content();                 
                 $this->load->view('dashboardView', $data);
 		
@@ -43,5 +47,40 @@ class userCont extends CI_Controller {
         //         // $this->load->view('registerView');
 		
         // }
+=======
+                $data['email'] = $this->Getter->get_dash_sms();
+                $data2['email'] = $this->Getter->get_dash_email(); 
+                
+                $this->load->view('dashboardView', $data, $data2);
+		
+        }
+
+        // public function toggle-off() {
+            
+        //         $this->load->model('Getter');
+        //         $data['dashboard_content'] = $this->Getter->get_dash_content(); 
+        //         $this->load->view('dashboardView', $data);
+        // }
+
+        // New Campaign Form -------
+
+        public function newemailcampaign(){
+                
+                        if ($_SESSION['user_logged'] == FALSE){
+                            $this->session->set_flashdata("error", "Please login first to view this page!! ");
+                            redirect("authCont/login");
+                        }
+                            $this->load->view('newemailcampaignView', 'refresh');
+                        }
+        public function emailform(){
+                        
+                                if ($_SESSION['user_logged'] == FALSE){
+                                    $this->session->set_flashdata("error", "Please login first to view this page!! ");
+                                    redirect("authCont/login");
+                                }
+                                    $this->load->view('emailformView', 'refresh');
+                                }
+        
+>>>>>>> 30919177384c8b51ffb0dd7f69e743236659e4de
         
 }
