@@ -48,14 +48,6 @@ class userCont extends CI_Controller {
             $this->load->view('smsformView');
         }
 
-<<<<<<< HEAD
-        // public function toggle($id, $status) {
-            
-        //         $this->load->model('Getter');
-        //         $data['status'] = $this->Getter->toggle($id, $status); 
-                
-        //         $this->load->view('dashboardView', $data);
-=======
         public function toggle() {
             
                 $this->load->model('Getter');
@@ -74,7 +66,6 @@ class userCont extends CI_Controller {
                 $this->db->where('id',$id);
                 $this->db->update('campaigns',$newStat);
                 redirect('userCont/dashboardview');
->>>>>>> 86d9467bf9e2dd543cc116077010c2359995717e
 		
         }
 
