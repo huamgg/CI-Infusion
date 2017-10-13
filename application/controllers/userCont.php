@@ -32,15 +32,46 @@ class userCont extends CI_Controller {
 		
         }
 
-        // public function toggle($id, $status) {
-        //     $id= 
-        //         $this->load->model('Getter');
-        //         $data['status'] = $this->Getter->toggle($id, $status); 
-                
-        //         $this->load->view('dashboardView', $data);
+        public function toggle() {
+            
+                $this->load->model('Getter');
 
-        //         // $this->load->view('registerView');
+                $id= $this->uri->segment(3);
+                $status= $this->uri->segment(4);
+                $data['dashboard_content'] = $this->Getter->get_campaign($id); 
+
+                
+                if($status==0){
+                    $newStat = ['status' => 1];
+                }
+                else{
+                    $newStat = ['status' => 0];
+                }
+                $this->db->where('id',$id);
+                $this->db->update('campaigns',$newStat);
+                redirect('userCont/dashboardview');
 		
-        // }
+        }
+
+        function edit(){
+            //maka dia akan print nama functionnya
+            // echo $this->uri->segment(2);
+            $this->load->model('model_barang');
+            $kode_barang = $this->uri->segment(3);
+            $data['barang'] = $this->model_barang->getBarang($kode_barang)->row_array();
+            // $this->load->view('edit_barang',$data); lari ke view editor
+        }
+    
+        function edit_data(){
+            $id = $this->input->post('id');
+            $newData = ['kode_barang' => $this->input->post('kode_barang'),
+                        'nama_barang' => $this->input->post('nama_barang'),
+                        'price' => $this->input->post('price')
+        ];
+        $this->db->where('kode_barang',$id);
+        $this->db->update('barang',$newData);
+    
+        redirect('barang');
+        }
         
 }

@@ -42,37 +42,37 @@
             </div>
 
             <div class="row">
-                <!-- bagian email -->
+                <!-- bagian Email -->
                 <div class="col-md-6">
-                    <div class="row">
+                <div class="row">
 
-                    <!-- kotak-kotak email -->
-                        <?php foreach( $dashboard_content as $e) {?>
-                            <?php if($e->type == 0){ ?>
-                            <div class="col-md-6 email-view">
-                                <h3>
-                                    <?php echo $e->campaign_name ?>
+                <!-- kotak-kotak email -->
+                    <?php foreach( $dashboard_content as $e) {?>
+                        <?php if($e->type == 0){ ?>
+                        <div class="col-md-6 email-view">
+                            <h3>
+                                <?php echo $e->campaign_name ?>
 
-                                   
-                                    <?php if($e->status==0){ ?>
-                                        <a href="<?php echo base_url(); ?>index.php/usercont/toggle/<?php $e->id ?>/<?php $e->status ?>">
-                                        <button type="button" class="btn btn-status btn-xs btn-success" name="tukangon">on</button>
-                                        </a>
-                                        <button type="button" class="btn btn-status btn-xs btn-danger"  disabled>off</button>
-                                    <?php } else { ?>
-                                        <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
-                                        <button type="button" class="btn btn-status btn-xs btn-danger"> off</button>
-                                    <?php } ?>
+                                <?php if($e->status==0){ ?>
                                     
-                                </h3>
-                                <p class="campaign-title"><?php echo $e->label_name ?></p>
-                                <button type="button" class="btn btn-warning">Edit Campaign</button>
-                            </div>
-                            <?php } ?>
-                            <!-- akhir if -->
+                                    
+                                    <?php echo "<button type='button' class='btn btn-status btn-xs btn-success' style='color:white;'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'on')."</button>"; ?>
+                                    
+                                    <button type="button" class="btn btn-status btn-xs btn-danger"  disabled>off</button>
+                                <?php } else { ?>
+                                    <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
+                                    <?php echo "<button type='button' class='btn btn-status btn-xs btn-danger' style='color:white;'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'off')."</button>"; ?>
+                                <?php } ?>
+                                
+                            </h3>
+                            <p class="campaign-title"><?php echo $e->label_name ?></p>
+                            <button type="button" class="btn btn-warning">Edit Campaign</button>
+                        </div>
                         <?php } ?>
-                    </div>
+                        <!-- akhir if -->
+                    <?php } ?>                        
                 </div>
+            </div>
 
                 <!-- bagian SMS -->
                 <div class="col-md-6">
@@ -86,13 +86,14 @@
                                     <?php echo $e->campaign_name ?>
 
                                     <?php if($e->status==0){ ?>
-                                        <a href="<?php echo base_url(); ?>index.php/usercont/toggle/<?php $e->id ?>/<?php $e->status ?>">
-                                        <button type="button" class="btn btn-status btn-xs btn-success" name="tukangon">on</button>
-                                        </a>
+                                        
+                                        
+                                        <?php echo "<button type='button' class='btn btn-status btn-xs btn-success' style='color:white;'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'on')."</button>"; ?>
+                                        
                                         <button type="button" class="btn btn-status btn-xs btn-danger"  disabled>off</button>
                                     <?php } else { ?>
                                         <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
-                                        <button type="button" class="btn btn-status btn-xs btn-danger"> off</button>
+                                        <?php echo "<button type='button' class='btn btn-status btn-xs btn-danger' style='color:white;'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'off')."</button>"; ?>
                                     <?php } ?>
                                     
                                 </h3>
