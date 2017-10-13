@@ -13,5 +13,16 @@ class Getter extends CI_Model{
 
     }
 
+<<<<<<< HEAD
 
 }
+=======
+    function get_campaign($id)
+    {        
+        function getCampaign($id){
+            return $this->db->get_where('campaign',['id' => $id]);
+        }
+   
+    }
+}
+>>>>>>> fbd5a7b814100a723579880e2434fdda1889b33c

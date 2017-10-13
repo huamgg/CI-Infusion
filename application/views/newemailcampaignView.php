@@ -13,38 +13,46 @@
       height:130px;
     }
 </style>
+
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
+<?php echo form_open('userCont/campaignregist'); ?>
+
+
   <div class="container-fluid">
-    <button type="button" href="<?php echo base_url(); ?>index.php/authCont/logout" class="btn btn-default navbar-btn">Back</button>
+    <a href="<?php echo base_url(); ?>index.php/userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="berborder" >
+
                     <form action="" method="POST">
                         <div class="form-group">    
-                            <label for="inputcampaign">Input Campaign Title </label>
-                            <input type="text" class="form-control" name="campaign-title" id="campaign-title">
+                            <label for="campaign_name">Input Campaign Title </label>
+                            <input type="text" class="form-control" name="campaign_name" >
                         </div>
 
                         <div class="form-group">
-                            <label for="sequenceqty">Sequence qty </label>
-                            <input type="text" class="form-control" name="sequence-qty" id="sequence-qty">
+                            <label for="sequence_qty">Sequence qty </label>
+                            <input type="text" class="form-control" name="sequence_qty" >
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleSelect1">Choose Category</label>
-                                <select class="form-control" id="exampleSelect1">
-                                    <option>Premium</option>
-                                    <option>Gold</option>
-                                    <option>Silver</option>
-                                    <option>Ahay</option>
-                                    <option>aweu</option>
+                            <label for="label_id">Choose Category</label>
+                                <select class="form-control"  name="label_id">
+                                    <option value="4">Kcp Baru</option>
+                                    <option value="3">Belum Top Up</option>
+                                    <option value="5">Kcp Belum Belanja</option>
                                 </select>
                         </div>
 
-                        <div class="text-right">
-                            <button type="button" class="btn btn-primary" name="login">next</button>
+<<<<<<< HEAD
+                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
+                            <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
+=======
+                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/emailform">
+                            <button type="button" class="btn btn-primary" name="login">next</button></a>
+>>>>>>> 42544a80162d8a6f9a24cf750acfb5848603802d
                         </div><hr>             
                     </form>
                 </div>
@@ -53,5 +61,8 @@
 
   </div>
 
+  <?php echo 
 
+form_close();
+(''); ?>
 <?php $this->load->view('footer'); ?>
