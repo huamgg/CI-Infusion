@@ -44,21 +44,36 @@ class userCont extends CI_Controller {
         // New Campaign Form -------
 
         public function newemailcampaign(){
-                
-                        if ($_SESSION['user_logged'] == FALSE){
-                            $this->session->set_flashdata("error", "Please login first to view this page!! ");
-                            redirect("authCont/login");
-                        }
                             $this->load->view('newemailcampaignView', 'refresh');
                         }
-        public function emailform(){
-                        
-                                if ($_SESSION['user_logged'] == FALSE){
-                                    $this->session->set_flashdata("error", "Please login first to view this page!! ");
-                                    redirect("authCont/login");
-                                }
-                                    $this->load->view('emailformView', 'refresh');
-                                }
-        
+        public function sequenceform(){                        
+                            $this->load->view('sequenceformView', 'refresh');
+        }
+                               
+        public function campaignregist(){
+                  //this for validation
+                //   if (isset($_POST['campaignregist'])){
+                //     $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique');
+                //     $this->form_validation->set_rules('sequence_qty', 'sequence qty', 'required');
+                //     $this->form_validation->set_rules('label_id', 'label id', 'required');
+                    
+
+                //     if ($this->form_validation->run() == TRUE){
+                //                 echo 'form validated';
+                    $newcampaign = [
+                        'campaign_name' =>$this->input->post('campaign_name'),
+                        'sequence_qty'=>$this->input->post('sequence_qty'),
+                        'label_id' =>$this->input->post('label_id'),
+                        'status' =>$this->input->post('status'),
+                        'type' =>$this->input->post('type'),
+                         'created_at'=>date('Y-m-d')
+                    ];
+                    $this->db->insert('campaigns', $newcampaign);
+            //     }
+            // }
+                $this->load->view('newemailcampaignView','refresh');
+            }
+
+                
         
 }
