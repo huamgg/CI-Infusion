@@ -25,6 +25,7 @@
 
 <div class="container-fluid">
             <div class="row">
+            <a href="<?php echo base_url(); ?>index.php/authCont/logout">Logout</a>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
@@ -57,20 +58,7 @@
                             <h3>
                                 <?php echo $e->campaign_name ?>
 
-<<<<<<< HEAD
-                                   
-                                    <?php if($e->status==0){ ?>
-                                        <a href="<?php echo base_url(); ?>index.php/usercont/toggle/<?php anchor('index.php/usercont/toggle/' .$e->id, $e->status) ?>">
-                                        <button type="button" class="btn btn-status btn-xs btn-success" name="tukangon">on</button>
-                                        </a>
-                                        <button type="button" class="btn btn-status btn-xs btn-danger"  disabled>off</button>
-                                    <?php } else { ?>
-                                        <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
-                                        <button type="button" class="btn btn-status btn-xs btn-danger"> off</button>
-                                    <?php } ?>
-=======
                                 <?php if($e->status==0){ ?>
->>>>>>> 86d9467bf9e2dd543cc116077010c2359995717e
                                     
                                     
                                     <?php echo "<button type='button' class='btn btn-status btn-xs btn-success' style='color:white;'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'on')."</button>"; ?>

@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/emailform">
-                            <button type="button" class="btn btn-primary" name="login">next</button></a>
+                            <button type="button" class="btn btn-primary" name="">next</button></a>
                         </div><hr>             
                     </form>
                 </div>

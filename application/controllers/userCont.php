@@ -44,18 +44,27 @@ class userCont extends CI_Controller {
             $this->load->view('newsmscampaignView');
         }
 
+        //test function
+        public function addCampaign(){    
+            
+            $newCampaign = [ 
+            'campaign_name' => $this->input->post('campaign_name'),
+            'sequence_qty' => $this->input->post('sequence_qty'),
+            'label_id' => $this->input->post('label_id'),
+            'type' => $this->input->post('1'),
+            'status' => $this->input->post('0'),
+            ];
+                    
+            $this->db->insert('campaigns',$newCampaign);
+
+            redirect('userCont/dashboardview', 'refresh');
+            
+        }
+
         public function smsform(){
             $this->load->view('smsformView');
         }
 
-<<<<<<< HEAD
-        // public function toggle($id, $status) {
-            
-        //         $this->load->model('Getter');
-        //         $data['status'] = $this->Getter->toggle($id, $status); 
-                
-        //         $this->load->view('dashboardView', $data);
-=======
         public function toggle() {
             
                 $this->load->model('Getter');
@@ -74,29 +83,8 @@ class userCont extends CI_Controller {
                 $this->db->where('id',$id);
                 $this->db->update('campaigns',$newStat);
                 redirect('userCont/dashboardview');
->>>>>>> 86d9467bf9e2dd543cc116077010c2359995717e
 		
         }
 
-        function edit(){
-            //maka dia akan print nama functionnya
-            // echo $this->uri->segment(2);
-            $this->load->model('model_barang');
-            $kode_barang = $this->uri->segment(3);
-            $data['barang'] = $this->model_barang->getBarang($kode_barang)->row_array();
-            // $this->load->view('edit_barang',$data); lari ke view editor
-        }
-    
-        function edit_data(){
-            $id = $this->input->post('id');
-            $newData = ['kode_barang' => $this->input->post('kode_barang'),
-                        'nama_barang' => $this->input->post('nama_barang'),
-                        'price' => $this->input->post('price')
-        ];
-        $this->db->where('kode_barang',$id);
-        $this->db->update('barang',$newData);
-    
-        redirect('barang');
-        }
         
 }
