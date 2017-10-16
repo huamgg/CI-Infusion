@@ -13,10 +13,6 @@ class Getter extends CI_Model{
 
     }
 
-<<<<<<< HEAD
-
-}
-=======
     function get_campaign($id)
     {        
         function getCampaign($id){
@@ -25,4 +21,3 @@ class Getter extends CI_Model{
    
     }
 }
->>>>>>> fbd5a7b814100a723579880e2434fdda1889b33c
