@@ -46,8 +46,13 @@
                                 </select>
                         </div>
 
+<<<<<<< HEAD
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
                             <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
+=======
+                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/emailform">
+                            <button type="button" class="btn btn-primary" name="login">next</button></a>
+>>>>>>> 42544a80162d8a6f9a24cf750acfb5848603802d
                         </div><hr>             
                     </form>
                 </div>
