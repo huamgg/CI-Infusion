@@ -14,15 +14,15 @@ class userCont extends CI_Controller {
     }
 
     //for get userpage after user login
-    public function userpage(){
+        public function userpage(){
 
-        if ($_SESSION['user_logged'] == FALSE){
-            $this->session->set_flashdata("error", "Please login first to view this page!! ");
-            redirect("authCont/login");
+            if ($_SESSION['user_logged'] == FALSE){
+                $this->session->set_flashdata("error", "Please login first to view this page!! ");
+                redirect("authCont/login");
         }
-        $this->load->view('dashboardView', 'refresh');
+                $this->load->view('dashboardView', 'refresh');
 
-    }
+        }
 
 		public function dashboardview() {
                        
@@ -84,6 +84,12 @@ class userCont extends CI_Controller {
                 redirect('userCont/dashboardview');
 		
         }
+<<<<<<< HEAD
+        // campaign form here!!---------------
+        public function newemailcampaign(){
+                         $this->load->view('newemailcampaignView', 'refresh');
+        }
+=======
 
 <<<<<<< HEAD
 =======
@@ -92,8 +98,13 @@ class userCont extends CI_Controller {
                 public function newemailcampaign(){
                             $this->load->view('newemailcampaignView', 'refresh');
                         }
+>>>>>>> 9e1f34cef1881928ff2785f5ac3e2b331e5dcdfc
         public function sequenceform(){                        
-                            $this->load->view('sequenceformView', 'refresh');
+                        $this->load->view('sequenceform', 'refresh');
+        }
+
+        public function sequencetest(){
+                        $this->load->view('daniel_test/sequence_test','refresh');
         }
                                
         public function campaignregist(){
@@ -107,10 +118,10 @@ class userCont extends CI_Controller {
                 //     if ($this->form_validation->run() == TRUE){
                 //                 echo 'form validated';
                     $newcampaign = [
-                        'campaign_name' =>$this->input->post('campaign_name'),
+                        'campaign_name' =>$this->input->post('ahay'),
                         'sequence_qty'=>$this->input->post('sequence_qty'),
                         'label_id' =>$this->input->post('label_id'),
-                        'status' =>$this->input->post('status'),
+                        'status' =>$this->input->post(1),
                         'type' =>$this->input->post('type'),
                          'created_at'=>date('Y-m-d')
                     ];

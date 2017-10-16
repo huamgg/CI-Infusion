@@ -23,8 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/infusion
 /';
+=======
+$config['base_url'] = 'http://localhost/infusion-CI-12/';
+>>>>>>> df6a51df0d095c3a8e0ed0b71a3a959f27b5b822
 
 /*
 |--------------------------------------------------------------------------
