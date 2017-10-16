@@ -29,6 +29,7 @@
 
 <div class="container-fluid">
             <div class="row">
+            <a href="<?php echo base_url(); ?>index.php/authCont/logout">Logout</a>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
@@ -63,10 +64,16 @@
                                 <?php echo $e->campaign_name ?>
 
                                 <?php if($e->status==0){ ?>
+<<<<<<< HEAD
+                                    
+                                    
+                                    <?php echo "<button type='button' class='btn btn-status btn-xs btn-success' style='color:white;'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'on')."</button>"; ?>
+=======
                                     <!-- ".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'on')." -->
                                     <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                                     <button type='button' class='btn btn-status btn-xs btn-success'> on</button>
                                     </a>
+>>>>>>> 8fd0877898ec4b1719d0e59b479e93497a8621a0
                                     
                                     <button type="button" class="btn btn-status btn-xs btn-danger" disabled>off</button>
                              

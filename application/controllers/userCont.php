@@ -44,6 +44,23 @@ class userCont extends CI_Controller {
             $this->load->view('newsmscampaignView');
         }
 
+        //test function
+        public function addCampaign(){    
+            
+            $newCampaign = [ 
+            'campaign_name' => $this->input->post('campaign_name'),
+            'sequence_qty' => $this->input->post('sequence_qty'),
+            'label_id' => $this->input->post('label_id'),
+            'type' => $this->input->post('1'),
+            'status' => $this->input->post('0'),
+            ];
+                    
+            $this->db->insert('campaigns',$newCampaign);
+
+            redirect('userCont/dashboardview', 'refresh');
+            
+        }
+
         public function smsform(){
             $this->load->view('smsformView');
         }
@@ -67,10 +84,21 @@ class userCont extends CI_Controller {
                 redirect('userCont/dashboardview');
 		
         }
+<<<<<<< HEAD
         // campaign form here!!---------------
         public function newemailcampaign(){
                          $this->load->view('newemailcampaignView', 'refresh');
         }
+=======
+
+<<<<<<< HEAD
+=======
+
+
+                public function newemailcampaign(){
+                            $this->load->view('newemailcampaignView', 'refresh');
+                        }
+>>>>>>> 9e1f34cef1881928ff2785f5ac3e2b331e5dcdfc
         public function sequenceform(){                        
                         $this->load->view('sequenceform', 'refresh');
         }
@@ -127,5 +155,6 @@ class userCont extends CI_Controller {
     
         redirect('barang');
         }
+>>>>>>> 8fd0877898ec4b1719d0e59b479e93497a8621a0
         
 }

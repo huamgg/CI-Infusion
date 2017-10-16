@@ -48,6 +48,17 @@
 
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
                             <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
+<<<<<<< HEAD
+=======
+=======
+                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/emailform">
+<<<<<<< HEAD
+                            <button type="button" class="btn btn-primary" name="">next</button></a>
+=======
+                            <button type="button" class="btn btn-primary" name="login">next</button></a>
+>>>>>>> 42544a80162d8a6f9a24cf750acfb5848603802d
+>>>>>>> 8fd0877898ec4b1719d0e59b479e93497a8621a0
+>>>>>>> 9e1f34cef1881928ff2785f5ac3e2b331e5dcdfc
                         </div><hr>             
                     </form>
                 </div>
